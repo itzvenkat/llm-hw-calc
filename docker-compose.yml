@@ -1,0 +1,9 @@
+services:
+  llm-calculator:
+    build: .
+    container_name: llm-hardware-calculator
+    ports:
+      - "${PORT:-3000}:80"
+    restart: unless-stopped
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
